@@ -11,7 +11,18 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "pretty-quick --staged",
+      "eslint --fix",
+      "git add"
+    ]
+  },
   "devDependencies": {
     "@babel/core": "^7.6.0",
     "@babel/plugin-transform-runtime": "^7.6.0",
