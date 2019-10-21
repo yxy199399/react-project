@@ -1,6 +1,22 @@
 .app {
-  background: red;
-  .p {
-    font-size: 100px;
+  overflow: hidden;
+  .left-nav {
+    width: 200px;
+    min-height: 100vh;
+    float: left;
+    background: #000;
+    .nav {
+      display: block;
+      padding: 10px 0;
+      color: #fff;
+      text-indent: 30px;
+      &:first-of-type {
+        padding-top: 30px;
+      }
+    }
+  }
+  .container {
+    width: calc(100% - 200px);
+    float: right;
   }
 }

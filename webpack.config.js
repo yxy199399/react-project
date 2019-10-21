@@ -21,6 +21,8 @@ module.exports = module.exports = (env, argv) => {
         .add('./src/index.js')
     })
 
+  config.output.publicPath('/')
+
   /**
    * module
    */
@@ -130,5 +132,7 @@ module.exports = module.exports = (env, argv) => {
       'process.env': configEnv[argv.mode]
     }
   ])
+
+  config.devServer.historyApiFallback(true)
   return config.toConfig()
 }
