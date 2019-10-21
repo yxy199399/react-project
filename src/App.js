@@ -55,6 +55,9 @@ export default class App extends Component {
             <Link replace className="nav" to="/jumb-back">
               jumb-back
             </Link>
+            <Link replace className="nav" to="/http">
+              http
+            </Link>
           </div>
           <div className="container">
             <Routers />

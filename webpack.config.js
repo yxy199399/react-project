@@ -133,6 +133,16 @@ module.exports = module.exports = (env, argv) => {
     }
   ])
 
-  config.devServer.historyApiFallback(true)
+  config.devServer
+    .historyApiFallback(true)
+    .open(true)
+    .port(3000)
+    .proxy({
+      '/api': {
+        target: configEnv[argv.mode].BASE_API,
+        pathRewrite: { '^/api': '' },
+        changeOrigin: true
+      }
+    })
   return config.toConfig()
 }

@@ -8,6 +8,7 @@ import DoubleRouter from './double-router'
 import RouterComfirm from './router-confirm'
 import Replace from './replace'
 import JumbBack from './jumb-back'
+import Http from './http'
 
 const Routers = () => {
   return (
@@ -20,6 +21,7 @@ const Routers = () => {
       <Route path="/router-confirm" component={RouterComfirm} />
       <Route path="/replace" component={Replace} />
       <Route path="/jumb-back" component={JumbBack} />
+      <Route path="/http" component={Http} />
     </Switch>
   )
 }
