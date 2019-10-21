@@ -7,13 +7,13 @@ const config = new WebpackChain()
 const isProd = process.env.NODE_ENV === 'production'
 config
   .when(isProd, config => {
-    config.entry('index').add('./src/index.js')
+    config.entry('index').add('./index.js')
   })
   .when(!isProd, config => {
     config
       .entry('index')
       .add('@babel/polyfill')
-      .add('./src/index.js')
+      .add('./index.js')
   })
 
 /**
