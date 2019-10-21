@@ -7,13 +7,13 @@ const config = new WebpackChain()
 const isProd = process.env.NODE_ENV === 'production'
 config
   .when(isProd, config => {
-    config.entry('index').add('./index.js')
+    config.entry('index').add('./src/index.js')
   })
   .when(!isProd, config => {
     config
       .entry('index')
       .add('@babel/polyfill')
-      .add('./index.js')
+      .add('./src/index.js')
   })
 
 /**
@@ -63,6 +63,11 @@ config.module
   .end()
   .use('postcss-loader')
   .loader('postcss-loader')
+config.module
+  .rule('scss')
+  .test(/\.(sa|sc)ss$/)
+  .use('sass-loader')
+  .loader('sass-loader')
 
 config.module
   .rule('svg')
