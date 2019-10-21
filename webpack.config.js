@@ -21,7 +21,18 @@ module.exports = module.exports = (env, argv) => {
         .add('./src/index.js')
     })
 
-  config.output.publicPath('/')
+  config.output
+    .publicPath('/')
+    .path(path.join(__dirname, 'dist'))
+    .filename('[name].[hash].js')
+    .end()
+    .when(isProd, config => {
+      config.mode('production')
+    })
+    .when(!isProd, config => {
+      config.mode('development').devtool('source-map')
+    })
+    .end()
 
   /**
    * module
