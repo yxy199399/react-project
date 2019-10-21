@@ -1,14 +1,15 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import Home from './home'
-import Params from './params'
-import Query from './query'
+import Home from './pages/home'
+import Params from './pages/params'
+import Query from './pages/query'
 import State from './state'
-import DoubleRouter from './double-router'
-import RouterComfirm from './router-confirm'
-import Replace from './replace'
-import JumbBack from './jumb-back'
-import Http from './http'
+import DoubleRouter from './pages/double-router'
+import RouterComfirm from './pages/router-confirm'
+import Replace from './pages/replace'
+import JumbBack from './pages/jumb-back'
+import Http from './pages/http'
+import ReduxTest from './pages/redux-test'
 
 const Routers = () => {
   return (
@@ -22,6 +23,7 @@ const Routers = () => {
       <Route path="/replace" component={Replace} />
       <Route path="/jumb-back" component={JumbBack} />
       <Route path="/http" component={Http} />
+      <Route path="/redux" component={ReduxTest} />
     </Switch>
   )
 }

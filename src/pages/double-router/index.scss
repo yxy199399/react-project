@@ -1,0 +1,25 @@
+.double-router {
+  height: 100%;
+  overflow: hidden;
+  .two-nav {
+    height: 60px;
+    background: slategray;
+    margin-bottom: 20px;
+    h1 {
+      float: left;
+      font-size: 30px;
+      line-height: 60px;
+      color: #fff;
+      text-indent: 20px;
+    }
+    .nav {
+      float: right;
+      line-height: 60px;
+      margin-right: 20px;
+      color: snow;
+    }
+  }
+  .two-container {
+    padding-left: 20px;
+  }
+}

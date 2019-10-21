@@ -58,6 +58,9 @@ export default class App extends Component {
             <Link replace className="nav" to="/http">
               http
             </Link>
+            <Link replace className="nav" to="/redux">
+              redux
+            </Link>
           </div>
           <div className="container">
             <Routers />
