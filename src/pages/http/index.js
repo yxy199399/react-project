@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import axios from '../helper/http'
+import axios from '../../helper/http'
 import UserItem from './components/user-item'
 import './index.scss'
 export default class Http extends Component {

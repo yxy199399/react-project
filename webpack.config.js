@@ -94,6 +94,16 @@ module.exports = module.exports = (env, argv) => {
     .loader('file-loader')
     .options({})
 
+  config.module
+    .rule('js')
+    .test(/\.bundle\.js$/)
+    .use('bundle-loader')
+    .loader('bundle-loader')
+    .options({
+      lazy: true,
+      name: '[name]'
+    })
+
   /**
    * plugin
    */

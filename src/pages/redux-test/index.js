@@ -14,24 +14,39 @@ class ReduxTest extends Component {
     super(props)
   }
 
+  state = {
+    newTitle: ''
+  }
+
   componentDidMount() {
     let { setPageTitle } = this.props
-
     // 触发setPageTitle action
     setPageTitle('新的标题')
+  }
 
-    // 触发setInfoList action
-    // setInfoList()
+  titleChange = e => {
+    this.setState({
+      newTitle: e.target.value
+    })
+  }
+
+  save = () => {
+    const { newTitle } = this.state
+    let { setPageTitle } = this.props
+    setPageTitle(newTitle)
   }
 
   render() {
     // 从props中解构store
     let { pageTitle } = this.props
+    const { newTitle } = this.state
 
     // 使用store
     return (
       <div>
         <h1>{pageTitle}</h1>
+        <input value={newTitle} onChange={this.titleChange} />
+        <button onClick={this.save}>修改标题</button>
       </div>
     )
   }
@@ -40,8 +55,7 @@ class ReduxTest extends Component {
 // mapStateToProps：将state映射到组件的props中
 const mapStateToProps = state => {
   return {
-    pageTitle: state.pageTitle,
-    infoList: state.infoList
+    pageTitle: state.pageTitle
   }
 }
 
@@ -59,9 +73,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
             dispatch({ type: 'SET_PAGE_TITLE', data: data })
         )*/
     }
-    // setInfoList(data) {
-    //   dispatch(setInfoList(data))
-    // }
   }
 }
 
